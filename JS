@@ -1,0 +1,36 @@
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+function clock(){
+  const fullDate = new Date();
+  let hours = fullDate.getHours();
+  let mins = fullDate.getMinutes();
+  let secs = fullDate.getSeconds();
+  let dotw = days[fullDate.getDay()];
+  let month = months[fullDate.getMonth()];
+  let date = fullDate.getDate();
+  let year = fullDate.getFullYear();
+  
+
+  if (hours <10) {
+    hours = "0" + hours;
+  }
+   if (mins <10) {
+    mins = "0" + mins;
+  }
+   if (secs <10) {
+    secs = "0" + secs;
+  }
+	
+  
+  document.getElementById('hour').innerHTML = hours + " :";
+  document.getElementById('min').innerHTML = mins + " :";
+  document.getElementById('sec').innerHTML = secs;
+  document.getElementById('dotw').innerHTML = dotw;
+  document.getElementById('month').innerHTML = month;
+  document.getElementById('date').innerHTML = date;
+  document.getElementById('year').innerHTML = year;
+}
+
+setInterval(clock, 100);
